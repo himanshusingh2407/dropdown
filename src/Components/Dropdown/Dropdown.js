@@ -31,7 +31,12 @@ class Dropdown extends React.Component {
         const selection = this.state.selectedTitle;
         selection.push(movie);
         this.setState({ selectedTitle: selection, suggestions: [] });
-        document.getElementById('movie-input').value = "";
+        try {
+            document.getElementById('movie-input').value = "";
+        document.getElementById("movie-input").focus();
+        } catch(e) {
+            console.log(e);
+        }
     }
 
     fetchSuggestions = debounce(() => {
@@ -47,10 +52,13 @@ class Dropdown extends React.Component {
         return (
             <div className="dropdown-wrapper">
                 {this.renderPills(this.state.selectedTitle)}
-                <div className="input-bar">
-                    <input type="text" className="input-field" id="movie-input" onChange={this.fetchSuggestions} autoComplete="off" />
-                    {this.state.suggestions?.length >= 1 && <Suggestions data={this.state.suggestions} onSelect={this.onSelect} />}
-                </div>
+                {this.state.selectedTitle.length < 5 &&
+                    <div className="input-bar">
+                        <input type="text" className="input-field" id="movie-input" onChange={this.fetchSuggestions} autoComplete="off" />
+                        {this.state.suggestions?.length >= 1 && <Suggestions data={this.state.suggestions} onSelect={this.onSelect} />}
+                    </div>
+                }
+
             </div>
         );
     }

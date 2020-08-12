@@ -5,7 +5,8 @@ function Suggestions({ data, onSelect }) {
     const suggestionList = (list) => {
         return list.map((obj) => (
             <div className="suggestion" key={obj.imdbID} onClick={() => { onSelect(obj.imdbID) }}>
-                {obj.Title}
+                <div>{obj.Title}</div>
+                <div className="suggestion-year">{obj.Year}</div>
             </div>
         ))
     }

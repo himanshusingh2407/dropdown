@@ -1,10 +1,10 @@
 .dropdown-wrapper {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     border: 1px solid #dbdbdb;
     border-radius: 25px;
-    height: 32px;
-    padding: 4px;
+    min-height: 32px;
     max-width: 500px;
     margin: auto;
 }
@@ -12,6 +12,10 @@
 .input-bar {
     margin-left: 8px;
     position: relative;
+    width: 100px;
+    height: 32px;
+    display: flex;
+    align-items: center;
 }
 
 .input-field {
