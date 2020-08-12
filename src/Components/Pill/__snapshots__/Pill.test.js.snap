@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="pill"
+>
+  <span
+    className="content"
+  >
+    Movie Name
+  </span>
+  <span
+    className="delete-pill"
+    onClick={[Function]}
+  >
+    x
+  </span>
+</div>
+`;
