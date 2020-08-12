@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="suggestions-wrapper"
+>
+  <div
+    className="suggestion"
+    onClick={[Function]}
+  >
+    <div>
+      Len and Company
+    </div>
+    <div
+      className="suggestion-year"
+    >
+      2015
+    </div>
+  </div>
+  <div
+    className="suggestion"
+    onClick={[Function]}
+  >
+    <div>
+      Titanic with Len Goodman
+    </div>
+    <div
+      className="suggestion-year"
+    >
+      2012–
+    </div>
+  </div>
+  <div
+    className="suggestion"
+    onClick={[Function]}
+  >
+    <div>
+      Len Goodman's Partners in Rhyme
+    </div>
+    <div
+      className="suggestion-year"
+    >
+      2017–
+    </div>
+  </div>
+  <div
+    className="suggestion"
+    onClick={[Function]}
+  >
+    <div>
+      Skazka pro len
+    </div>
+    <div
+      className="suggestion-year"
+    >
+      1976
+    </div>
+  </div>
+  <div
+    className="suggestion"
+    onClick={[Function]}
+  >
+    <div>
+      Den hen lai len
+    </div>
+    <div
+      className="suggestion-year"
+    >
+      1974
+    </div>
+  </div>
+  <div
+    className="suggestion"
+    onClick={[Function]}
+  >
+    <div>
+      Len and Hugo
+    </div>
+    <div
+      className="suggestion-year"
+    >
+      2006
+    </div>
+  </div>
+  <div
+    className="suggestion"
+    onClick={[Function]}
+  >
+    <div>
+      The Roots of Wolverine: A Conversation with Stan Lee and Len Wein
+    </div>
+    <div
+      className="suggestion-year"
+    >
+      2009
+    </div>
+  </div>
+  <div
+    className="suggestion"
+    onClick={[Function]}
+  >
+    <div>
+      Osa len' oi andres metaxy tous
+    </div>
+    <div
+      className="suggestion-year"
+    >
+      2006–
+    </div>
+  </div>
+  <div
+    className="suggestion"
+    onClick={[Function]}
+  >
+    <div>
+      Doodlin': Impressions of Len Lye
+    </div>
+    <div
+      className="suggestion-year"
+    >
+      1987
+    </div>
+  </div>
+  <div
+    className="suggestion"
+    onClick={[Function]}
+  >
+    <div>
+      Len(n)y
+    </div>
+    <div
+      className="suggestion-year"
+    >
+      2018
+    </div>
+  </div>
+</div>
+`;
