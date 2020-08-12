@@ -1,0 +1,23 @@
+.dropdown-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #dbdbdb;
+    border-radius: 25px;
+    height: 32px;
+    padding: 4px;
+    max-width: 500px;
+    margin: auto;
+}
+
+.input-bar {
+    margin-left: 8px;
+}
+
+.input-field {
+    border: none;
+    background: transparent;
+}
+
+.input-field:focus {
+    outline: none;
+}
