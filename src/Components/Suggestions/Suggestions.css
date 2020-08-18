@@ -18,7 +18,7 @@
     cursor: pointer;
 }
 
-.suggestion:hover {
+.suggestion:hover, .selected {
     background-color: #d5e8f4;
 }
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import debounce from 'lodash.debounce';
-import Pill from '../Pill/Pill';
 import Suggestions from '../Suggestions/Suggestions';
 import { getSuggestions } from '../../Service';
 import './Dropdown.css';
@@ -8,29 +7,13 @@ import './Dropdown.css';
 class Dropdown extends React.Component {
     state = {
         suggestions: [],
-        selectedTitle: []
+        selectedTitle: {},
+        selectedIndex: -1
     }
 
-    deleteSelected = (id) => {
-        const selectedTitle = this.state.selectedTitle.filter((obj) => (obj.imdbID !== id));
-        this.setState({ selectedTitle });
-    }
-
-    renderPills = (selected) => {
-        if (selected.length > 0) {
-            return selected.map((obj) => (
-                <Pill key={obj.imdbID} text={obj.Title} onDelete={() => { this.deleteSelected(obj.imdbID) }} />
-            ));
-        } else {
-            return null;
-        }
-    }
-
-    onSelect = (id) => {
+    onSelect = (id, index) => {
         const movie = this.state.suggestions.find((obj) => (obj.imdbID === id));
-        const selection = this.state.selectedTitle;
-        selection.push(movie);
-        this.setState({ selectedTitle: selection, suggestions: [] });
+        this.setState({ selectedTitle: movie, suggestions: [], selectedIndex: -1 });
         try {
             document.getElementById('movie-input').value = "";
         document.getElementById("movie-input").focus();
@@ -48,16 +31,25 @@ class Dropdown extends React.Component {
         }
     }, 200);
 
+    handleKeyPress = (e) => {
+        //Up key 
+        if(e.which === 38) {
+            const newIndex = (this.state.selectedIndex - 1) % this.state.suggestions.length; 
+            this.setState({selectedIndex: newIndex});
+        } else if(e.which === 40) { //down key
+            const newIndex = (this.state.selectedIndex + 1) % this.state.suggestions.length; 
+            this.setState({selectedIndex: newIndex});
+        }
+    }
+
     render() {
         return (
             <div className="dropdown-wrapper">
-                {this.renderPills(this.state.selectedTitle)}
-                {this.state.selectedTitle.length < 5 &&
                     <div className="input-bar">
-                        <input type="text" className="input-field" id="movie-input" onChange={this.fetchSuggestions} autoComplete="off" />
-                        {this.state.suggestions?.length >= 1 && <Suggestions data={this.state.suggestions} onSelect={this.onSelect} />}
+                        <input type="text" className="input-field" id="movie-input" onChange={this.fetchSuggestions} onKeyDown={this.handleKeyPress} autoComplete="off" />
+                        {this.state.suggestions?.length >= 1 &&
+                            <Suggestions data={this.state.suggestions} onSelect={this.onSelect} selectedIndex={this.state.selectedIndex}/>}
                     </div>
-                }
 
             </div>
         );
